@@ -1,0 +1,61 @@
+.ykart-continer {
+  width: 90%;
+  margin: 20px auto;
+  .category {
+    margin-bottom: 2rem;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    .select {
+      padding: 0.2rem 0.3rem;
+    }
+    .btn {
+      padding: 0.5rem 0.8rem;
+      background: #006262;
+      color: white;
+      border: none;
+      border-radius: 2px;
+      &:hover {
+        cursor: pointer;
+        background: #016868;
+      }
+    }
+  }
+  .body {
+    display: flex;
+    flex-wrap: wrap;
+    .unavailable {
+      background-color: #ddd;
+      color: #727272;
+      &:hover {
+        cursor: not-allowed !important;
+      }
+    }
+    .selected-product {
+      border: 1px solid #006262 !important;
+      box-shadow: 0 0 5px #003a3a;
+    }
+    .card {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      width: 15rem;
+      margin-right: 2rem;
+      margin-top: 2rem;
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 4px #7a7979;
+      }
+      .product-body {
+        .image {
+          text-align: center;
+        }
+        .margin-top-1 {
+          margin-top: 1rem;
+        }
+        .product-title {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

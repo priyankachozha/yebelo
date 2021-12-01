@@ -1,0 +1,54 @@
+<div class="ykart-continer">
+  <div class="category">
+    <div>
+      <label>Category: </label>
+      <select
+        [(ngModel)]="selectedCategory"
+        class="select"
+        (change)="onChangeCategory()"
+      >
+        <option value="">-Select-</option>
+        <option value="Premium">Permium</option>
+        <option value="Tamilnadu">Tamilnadu</option>
+      </select>
+    </div>
+    <div>
+      <button class="btn" (click)="onSubmit()">Submit</button>
+    </div>
+  </div>
+  <div class="body">
+    <div
+      class="card"
+      *ngFor="let list of productList"
+      (click)="onProductSelect(list)"
+      [ngClass]="{
+        unavailable: !list.p_availability,
+        'selected-product': list.isSelected
+      }"
+    >
+      <div class="product-body">
+        <div class="image">
+          <img
+            [src]="'../assets/images/' + list.p_image_name + '.jpg'"
+            alt="apple"
+            width="150"
+            height="150"
+          />
+        </div>
+        <div class="margin-top-1 product-title">{{ list.p_name }}</div>
+        <div class="margin-top-1 cost">Price: ₹ {{ list.p_cost }}</div>
+        <div class="margin-top-1 availability">
+          <span *ngIf="list.p_availability; else unavailable">
+            Availability: {{ list.p_availability }}</span
+          >
+          <ng-template #unavailable>
+            <span> Currently Unavailable</span></ng-template
+          >
+        </div>
+        <div class="margin-top-1 details">
+          Product details: {{ list.p_details ? list.p_details : "---" }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
